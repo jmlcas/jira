@@ -1,9 +1,7 @@
-version: '3.3'
-
 services:
 
   jira:
-    image: atlassian/jira-software
+    image: atlassian/jira-software:latest
     container_name: jira
     restart: unless-stopped
     environment:
@@ -21,7 +19,7 @@ services:
       - ./data:/var/atlassian/application-data/jira
 
   db:
-    image: postgres
+    image: postgres:latest
     restart: unless-stopped
     environment:
       - POSTGRES_USER=dbuser1
